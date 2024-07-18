@@ -1,0 +1,115 @@
+/* src/styles/styles.css */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1; /* This allows the container to grow and push the footer down */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    position: relative;
+    left: 0; /* Ensure the footer starts from the left edge */
+    right: 0; /* Ensure the footer ends at the right edge */
+    bottom: 0;
+}
+
+    .footer .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer p, .footer a {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    .footer a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 5px;
+    }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+.back-button {
+    display: inline-block;
+    margin: 20px 0; /* Adjust margin as needed */
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+    .back-button:hover {
+        background-color: #0056b3;
+    }
+
+/* Styles for contact information */
+.contact-info {
+    list-style: none;
+    padding: 0;
+}
+
+    .contact-info li {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+.icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Styles for social media table */
+.table-container {
+    margin-top: 20px;
+}
+
+.social-media-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .social-media-table th,
+    .social-media-table td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .social-media-table th {
+        background-color: #f0f0f0;
+    }
+
+    .social-media-table td a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .social-media-table td a:hover {
+            text-decoration: underline;
+        }
