@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  spring-boot-app:
+    image: my-spring-boot-app
+    build:
+      context: ./path/to/your/spring-boot-project
+    ports:
+      - "8080:8080"
+    depends_on:
+      - react-app
+
+  react-app:
+    image: my-react-app
+    build:
+      context: ./path/to/your/react-app
+    ports:
+      - "80:80"
