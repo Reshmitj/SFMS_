@@ -1,23 +1,25 @@
 blocks:
   - name: "Build Spring Boot Backend"
     commands:
+      - run: cd backend
       - run: ./mvnw clean package
     artifactPaths:
-      - target/*.jar
+      - backend/target/*.jar
 
   - name: "Build React Frontend"
     commands:
+      - run: cd frontend
       - run: npm install
       - run: npm run build
     artifactPaths:
-      - build/**
+      - frontend/build/**
 
   - name: "Deploy Backend"
     deploy: webapp-io-deployment
     environment:
       - SPRING_PROFILES_ACTIVE: production
     commands:
-      - run: java -jar target/your-spring-boot-application.jar
+      - run: java -jar backend/target/your-spring-boot-application.jar
 
   - name: "Deploy Frontend"
     deploy: webapp-io-deployment
@@ -26,4 +28,4 @@ blocks:
     commands:
       - run: |
           rm -rf /var/www/html/your-frontend-path
-          cp -R build/* /var/www/html/your-frontend-path
+          cp -R frontend/build/* /var/www/html/your-frontend-path
